@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --text-color: #1B263B;
+            --background-color: #EBF5FB;
+            --accent-color: #4A90E2;
+            --card-bg: #FFFFFF;
+            --card-shadow: rgba(0, 0, 0, 0.1);
+        }
+        body {
+            background-color: var(--background-color);
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+        }
+        .quotes-container {
+            background-color: var(--accent-color);
+            color: white;
+            font-style: italic;
+            font-weight: 600;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 1.15rem;
+            user-select: none;
+        }
+        #quote {
+            display: inline;
+        }
+        #author {
+            display: block;
+            text-align: right;
+            margin-top: 5px;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+            background: var(--card-bg);
+            box-shadow: 0 2px 5px var(--card-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .link {
+            color: var(--text-color);
+            padding: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .link:hover {
+            font-family: 'Pacifico', cursive;
+            animation: colorShift 2s infinite alternate;
+            color: var(--accent-color);
+        }
+        .card {
+            background: var(--card-bg);
+            max-width: 700px;
+            margin: 40px auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px var(--card-shadow);
+            padding: 40px 40px 50px 40px;
+            transition: box-shadow 0.3s ease;
+            cursor: default;
+        }
+        .card:hover {
+            box-shadow: 0 8px 30px rgba(74, 144, 226, 0.5);
+            color: var(--accent-color);
+            font-family: 'Pacifico', cursive;
+            animation: colorShift 2s infinite alternate;
+        }
+        h1, h2 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        p {
+            font-size: 1.18rem;
+            line-height: 1.7;
+            margin: 15px 0;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+        p.italic {
+            font-size: 1rem;
+            font-style: italic;
+            margin-top: 30px;
+        }
+        @keyframes colorShift {
+            0% { color: #4A90E2; }
+            25% { color: #357ABD; }
+            50% { color: #1C5FA8; }
+            75% { color: #4A90E2; }
+            100% { color: #357ABD; }
+        }
+    </style>
+</head>
+<body>
+    <div class="quotes-container">
+        <span id="quote"></span>
+        <span id="author"></span>
+    </div>
+
+    <div class="header">
+        <a href="index.html" class="link">home</a>
+        <a href="about.html" class="link">about</a>
+        <a href="services.html" class="link">services</a>
+        <a href="contact.html" class="link">contacts</a>
+    </div>
+
+    <div class="card">
+        <h1>About Me</h1>
+        <p>
+            I am Tole Caxtone Kirigha, a passionate developer and technology enthusiast. I specialize in combining creativity with technical expertise to build innovative solutions.
+        </p>
+        <p>
+            With experience in mobile and web development, AI & Machine Learning, IoT, and robotics, I continuously strive to expand my skills and deliver impactful projects.
+        </p>
+        <p class="italic">
+            Thank you for visiting my portfolio!
+        </p>
+    </div>
+
+<script>
+    // Same quotes and typing script as index.html, reuse for all pages
+    const quotes = [
+      { text: "The best way to predict the future is to invent it.", author: "Alan Kay" },
+      { text: "Strive not to be a success, but rather to be of value.", author: "Albert Einstein" },
+      { text: "Innovation distinguishes between a leader and a follower.", author: "Steve Jobs" },
+      { text: "Don’t watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+      { text: "Success is not in what you have, but who you are.", author: "Bo Bennett" },
+      { text: "Your time is limited, so don’t waste it living someone else’s life.", author: "Steve Jobs" },
+      { text: "The harder you work for something, the greater you’ll feel when you achieve it.", author: "Unknown" },
+      { text: "Dream bigger. Do bigger.", author: "Unknown" },
+      { text: "Don’t stop when you’re tired. Stop when you’re done.", author: "Unknown" },
+      { text: "Little things make big days.", author: "Unknown" },
+      { text: "It always seems impossible until it’s done.", author: "Nelson Mandela" },
+      { text: "Don’t wait for opportunity. Create it.", author: "Unknown" },
+      { text: "Sometimes we’re tested not to show our weaknesses, but to discover our strengths.", author: "Unknown" },
+      { text: "The key to success is to focus on goals, not obstacles.", author: "Unknown" },
+      { text: "Push yourself, because no one else is going to do it for you.", author: "Unknown" },
+      { text: "Great things never come from comfort zones.", author: "Unknown" },
+      { text: "Success is what happens after you have survived all your mistakes.", author: "Anora Lee" },
+      { text: "Action is the foundational key to all success.", author: "Pablo Picasso" },
+      { text: "Start where you are. Use what you have. Do what you can.", author: "Arthur Ashe" },
+      { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
+      { text: "Work hard in silence, let your success be your noise.", author: "Frank Ocean" },
+      { text: "Success usually comes to those who are too busy to be looking for it.", author: "Henry David Thoreau" },
+      { text: "Don’t be afraid to give up the good to go for the great.", author: "John D. Rockefeller" },
+      { text: "I find that the harder I work, the more luck I seem to have.", author: "Thomas Jefferson" },
+      { text: "Opportunities don't happen. You create them.", author: "Chris Grosser" },
+      { text: "Dream it. Wish it. Do it.", author: "Unknown" },
+      { text: "Success is not the key to happiness. Happiness is the key to success.", author: "Albert Schweitzer" },
+      { text: "Hard work beats talent when talent doesn’t work hard.", author: "Tim Notke" }
+    ];
+
+    const quoteElement = document.getElementById('quote');
+    const authorElement = document.getElementById('author');
+    let charIndex = 0;
+    let currentQuote = '';
+    let typingSpeed = 50; 
+    let pauseBetweenQuotes = 4000;
+
+    function typeQuote() {
+      if (charIndex < currentQuote.length) {
+        quoteElement.textContent += currentQuote.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeQuote, typingSpeed);
+      } else {
+        setTimeout(() => {
+          eraseQuote();
+        }, pauseBetweenQuotes);
+      }
+    }
+
+    function eraseQuote() {
+      if (charIndex > 0) {
+        quoteElement.textContent = currentQuote.substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseQuote, typingSpeed / 2);
+      } else {
+        displayNewQuote();
+      }
+    }
+
+    function displayNewQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      currentQuote = `"${quotes[randomIndex].text}"`;
+      authorElement.textContent = `— ${quotes[randomIndex].author}`;
+      charIndex = 0;
+      quoteElement.textContent = '';
+      typeQuote();
+    }
+
+    window.onload = () => {
+      displayNewQuote();
+    };
+</script>
+
+</body>
+</html>
